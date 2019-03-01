@@ -1,0 +1,11 @@
+p {
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  margin: 10px;
+  align-content: center;
+  background-color: bisque;
+  border: 2px solid antiquewhite;
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px rgba(0,0,0,0.2);;
+}
