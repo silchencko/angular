@@ -1,5 +1,14 @@
-<p>
-  <app-car></app-car>
-  <app-car></app-car>
-  <app-car></app-car>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <input type="text" class="form-control" [(ngModel)]="carName" >
+      <button (click) = "addCar()" class="btn btn-primary">Add a car</button>
+      <p *ngIf="!addCarStatus; else successStatus">Car is not added</p>
+      <ng-template #successStatus>
+        <p>Car is added</p>
+      </ng-template>
+      <hr>
+      <app-car *ngFor="let car of cars"></app-car>
+    </div>
+  </div>
+</div>
