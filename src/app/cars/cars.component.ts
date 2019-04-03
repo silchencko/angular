@@ -1,19 +1,28 @@
-import { Component } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.css']
+  styleUrls: ['./cars.component.css'],
+  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CarsComponent {
 
-  carName = '';
-  addCarStatus = false;
-  cars = ['Ford', 'Mercedes', 'BMW'];
+
+  // @ts-ignore
+  cars: [{name: string, year: number}] = [{
+    name: 'Ford',
+    year: 2015
+  // }, {
+  //   name: 'Mercedes',
+  //   year: 2013
+  // }, {
+  //   name: 'BMW',
+  //   year: 2017
+  }];
+
   constructor() {}
-  addCar() {
-    this.addCarStatus = true;
-    this.cars.push(this.carName);
-    this.carName = '';
+  updateCarList(car: {name: string, year: number}) {
+    this.cars.push(car);
   }
 }

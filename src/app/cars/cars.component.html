@@ -1,14 +1,16 @@
 <div class="container">
   <div class="row">
+    <p>Adding a car</p>
+  </div>
+  <div class="row">
     <div class="col-xs-12">
-      <input type="text" class="form-control" [(ngModel)]="carName" >
-      <button (click) = "addCar()" class="btn btn-primary">Add a car</button>
-      <p *ngIf="!addCarStatus; else successStatus">Car is not added</p>
-      <ng-template #successStatus>
-        <p>Car is added</p>
-      </ng-template>
+      <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
       <hr>
-      <app-car *ngFor="let car of cars"></app-car>
+      <div class="list-group">
+        <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+          <div #carAlert class="alert alert-info">Car was sold</div>
+        </app-car>
+      </div>
     </div>
   </div>
 </div>

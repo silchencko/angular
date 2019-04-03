@@ -1,0 +1,11 @@
+li {
+  text-align: left;
+}
+
+p {
+  font-size: 24px;
+}
+
+.big-text {
+  font-size: 125%;
+}
